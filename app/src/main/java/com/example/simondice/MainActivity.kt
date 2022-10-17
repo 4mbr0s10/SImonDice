@@ -1,5 +1,6 @@
 package com.example.simondice
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -12,9 +13,14 @@ class MainActivity : AppCompatActivity() {
 
     }
     fun llamarJuego(){
-        val boton=findViewById<Button>(R.id.botonInicio)
-        boton.setOnClickListener{
-        
+        val botonInicio=findViewById<Button>(R.id.botonInicio)
+        botonInicio.setOnClickListener{
+        startActivity(
+            Intent(
+                this,
+                Botones::class.java
+            )
+        )
     }
     }
 }
