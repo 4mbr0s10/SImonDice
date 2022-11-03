@@ -10,15 +10,17 @@
         android:id="@+id/botonRojo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/rojo_apagado"
         android:text="Button"
-        tools:layout_editor_absoluteX="59dp"
-        tools:layout_editor_absoluteY="130dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="57dp"
+        tools:layout_editor_absoluteY="131dp" />
 
     <Button
         android:id="@+id/botonVerde"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/verde_apagado"
         android:text="Button"
         tools:layout_editor_absoluteX="235dp"
         tools:layout_editor_absoluteY="131dp"
@@ -28,15 +30,18 @@
         android:id="@+id/botonAmarillo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:background="@color/amarillo_apagado"
+        android:text="Amarillo"
+        android:textColor="#263238"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="57dp"
-        tools:layout_editor_absoluteY="244dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="244dp" />
 
     <Button
         android:id="@+id/botonAzul"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/azul_apagado"
         android:text="Button"
         tools:layout_editor_absoluteX="243dp"
         tools:layout_editor_absoluteY="249dp"
