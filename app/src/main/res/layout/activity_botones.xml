@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/rojo_apagado"
-        android:text="Button"
+        android:text="@string/rojo"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="57dp"
         tools:layout_editor_absoluteY="131dp" />
@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/verde_apagado"
-        android:text="Button"
+        android:text="@string/verde"
         tools:layout_editor_absoluteX="235dp"
         tools:layout_editor_absoluteY="131dp"
         tools:ignore="MissingConstraints" />
@@ -31,9 +31,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/amarillo_apagado"
-        android:text="Amarillo"
-        android:textColor="#263238"
-        tools:ignore="MissingConstraints"
+        android:text="@string/amarillo"
+
+        tools:ignore="MissingConstraints,TextContrastCheck"
         tools:layout_editor_absoluteX="57dp"
         tools:layout_editor_absoluteY="244dp" />
 
@@ -42,8 +42,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/azul_apagado"
-        android:text="Button"
-        tools:layout_editor_absoluteX="243dp"
-        tools:layout_editor_absoluteY="249dp"
-        tools:ignore="MissingConstraints" />
+        android:text="@string/azul"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="235dp"
+        tools:layout_editor_absoluteY="244dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
