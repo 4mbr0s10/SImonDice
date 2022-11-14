@@ -8,10 +8,13 @@
 
     <Button
         android:id="@+id/botonInicio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="START"
-        tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="366dp"
-        tools:ignore="MissingConstraints" />
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="288dp"
+        android:background="#FF0000"
+        android:text="@string/start"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="130dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
