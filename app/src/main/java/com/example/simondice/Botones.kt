@@ -5,8 +5,7 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import kotlinx.coroutines.Delay
-import kotlinx.coroutines.delay
+import kotlinx.coroutines.*
 import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.concurrent.schedule
@@ -15,9 +14,9 @@ import kotlin.concurrent.schedule
 class Botones : AppCompatActivity() {
     var secuenciaMaquina: ArrayList<Int> = ArrayList()
     var secuenciaUsuario: ArrayList<Int> = ArrayList()
-    var contador:Int=0
+    var contador:Int=0;
     var auxContador:Int=0
-    var numRonda:Int=0
+   private var numRonda:Int=0
     lateinit var botonRojo:Button
     lateinit var botonVerde:Button
     lateinit var botonAmarillo:Button
@@ -26,97 +25,120 @@ class Botones : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_botones)
-        botonRojo=findViewById<Button>(R.id.botonRojo)
+         botonRojo=findViewById<Button>(R.id.botonRojo)
         botonVerde=findViewById<Button>(R.id.botonVerde)
         botonAmarillo=findViewById<Button>(R.id.botonAmarillo)
         botonAzul=findViewById<Button>(R.id.botonAzul)
 
 
-        juego()
+    iluminarBoton(secuenciaMaquina)
+
     }
-  fun juego(){
-       iluminarBoton()
+//  fun juego(){
+//       iluminarBoton()
+//
+//
+//  }
+    fun defineBoton(secuenciaUsuario:ArrayList<Int>){
 
-
-  }
-    fun defineBoton(){
-
+     var botonRojo:Button=findViewById(R.id.botonRojo)
+    val botonVerde:Button=findViewById(R.id.botonVerde)
+    val botonAmarillo:Button=findViewById(R.id.botonAmarillo)
+    val botonAzul:Button=findViewById(R.id.botonAzul)
+    GlobalScope.launch(Dispatchers.Main) {
         botonRojo.setOnClickListener {
             secuenciaUsuario.add(0)
             contador++
-            comprobarSecuencias()
+            comprobarSecuencias(secuenciaUsuario,secuenciaMaquina,contador)
         }
+        }
+    GlobalScope.launch(Dispatchers.Main) {
         botonVerde.setOnClickListener {
             secuenciaUsuario.add(1)
             contador++
-            comprobarSecuencias()
+            comprobarSecuencias(secuenciaUsuario,secuenciaMaquina,contador)
         }
+        }
+    GlobalScope.launch(Dispatchers.Main) {
         botonAmarillo.setOnClickListener {
             secuenciaUsuario.add(2)
             contador++
-            comprobarSecuencias()
+            comprobarSecuencias(secuenciaUsuario,secuenciaMaquina,contador)
         }
+        }
+    GlobalScope.launch(Dispatchers.Main) {
         botonAzul.setOnClickListener {
             secuenciaUsuario.add(3)
             contador++
-            comprobarSecuencias()
+            comprobarSecuencias(secuenciaUsuario,secuenciaMaquina,contador)
+        }
         }
 
     }
 
 
-    fun iluminarBoton(){
+    fun iluminarBoton(secuenciaMaquina:ArrayList<Int>)= runBlocking{
         numRonda++
-        var tiempoIluminado= 2000L
-        when(generarColor()){
+        var tiempoIluminado= 2000
+        when(0){
 
             0 ->{
-                botonRojo.setBackgroundColor(Color.parseColor("rojo_encendido"))
-                secuenciaMaquina.add(0)
-                Timer().schedule(tiempoIluminado){
-                    botonRojo.setBackgroundColor(Color.parseColor("rojo_apagado"))
+                GlobalScope.launch(Dispatchers.Main) {
+                    botonRojo.setBackgroundColor((resources.getColor(R.color.rojo_encendido)))
+                    secuenciaMaquina.add(0)
+                    Timer().schedule(tiempoIluminado) {
+                        botonRojo.setBackgroundColor((resources.getColor(R.color.rojo_apagado)))
+                    }
                 }
-
             }
             1 -> {
-                botonVerde.setBackgroundColor(Color.parseColor("verde_encendido"))
-                secuenciaMaquina.add(1)
-                Timer().schedule(tiempoIluminado){
-                    botonVerde.setBackgroundColor(Color.parseColor("verde_apagado"))
+                GlobalScope.launch(Dispatchers.Main) {
+                    botonVerde.setBackgroundColor((resources.getColor(R.color.verde_encendido)))
+                    secuenciaMaquina.add(1)
+                    Timer().schedule(tiempoIluminado) {
+                        botonVerde.setBackgroundColor((resources.getColor(R.color.verde_apagado)))
+                    }
                 }
             }
             2 -> {
-                botonAmarillo.setBackgroundColor(Color.parseColor("amarillo_encendido"))
+                GlobalScope.launch(Dispatchers.Main) {
+                botonAmarillo.setBackgroundColor((resources.getColor(R.color.amarillo_encendido)))
                 secuenciaMaquina.add(2)
                 Timer().schedule(tiempoIluminado){
-                    botonAmarillo.setBackgroundColor(Color.parseColor("amarillo_apagado"))
+                    botonAmarillo.setBackgroundColor((resources.getColor(R.color.amarillo_apagado)))
+                }
                 }
             }
+
             3 -> {
-                botonAzul.setBackgroundColor(Color.parseColor("azul_encendido"))
+                GlobalScope.launch(Dispatchers.Main) {
+                botonAzul.setBackgroundColor((resources.getColor(R.color.azul_encendido)))
                 secuenciaMaquina.add(3)
                 Timer().schedule(tiempoIluminado){
-                    botonAzul.setBackgroundColor(Color.parseColor("azul_apagado"))
+                    botonAzul.setBackgroundColor((resources.getColor(R.color.azul_apagado)))
+                }
                 }
             }
 
 
         }
+        GlobalScope.launch(Dispatchers.Main) {
             if(numRonda==secuenciaMaquina.size){
-                for (items in secuenciaMaquina){
-                    defineBoton()
+                for (Int in secuenciaMaquina){
+                    defineBoton(secuenciaUsuario)
+                }
                 }
 
             }
 
     }
-    fun comprobarSecuencias(){
+    fun comprobarSecuencias(secuenciaUsuario: ArrayList<Int>,secuenciaMaquina: ArrayList<Int>,contador:Int){
             if(secuenciaUsuario[contador]!=secuenciaMaquina[contador]){
                 println("HAS FALLADO!")
 
             }else if(secuenciaMaquina.size == contador +1){
-                iluminarBoton()
-                contador = contador -1
+                iluminarBoton(secuenciaMaquina)
+                this.contador =contador-1
                 secuenciaUsuario.clear()
             }
 
