@@ -84,10 +84,10 @@ class Botones : AppCompatActivity() {
 
             0 ->{
                 GlobalScope.launch(Dispatchers.Main) {
-                    botonRojo.setBackgroundColor((resources.getColor(R.color.rojo_encendido)))
+                    botonRojo.backgroundTintList((resources.getColor(R.color.rojo_encendido)))
                     secuenciaMaquina.add(0)
                     Timer().schedule(tiempoIluminado) {
-                        botonRojo.setBackgroundColor((resources.getColor(R.color.rojo_apagado)))
+                        botonRojo.backgroundTintList((resources.getColor(R.color.rojo_apagado)))
                     }
                 }
             }
@@ -150,6 +150,10 @@ class Botones : AppCompatActivity() {
     fun comprobarColor(){
 
     }
+}
+
+private fun Button.backgroundTintList(color: Int) {
+
 }
 
 private fun Timer.schedule(tiempoIluminado: Int, function: () -> Unit) {

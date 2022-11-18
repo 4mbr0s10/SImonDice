@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Botones"
-    android:background="@color/rojo_apagado">
+    android:background="@color/purple_200">
 
     <TextView
         android:layout_width="wrap_content"
@@ -21,7 +21,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="20dp"
-        android:background="@color/rojo_apagado"
+        android:backgroundTint="@color/rojo_apagado"
         android:text="@string/rojo"
         app:layout_constraintEnd_toStartOf="@+id/botonVerde"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,7 +31,7 @@
         android:id="@+id/botonVerde"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:background="@color/verde_apagado"
+        android:backgroundTint="@color/verde_apagado"
         android:text="@string/verde"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="40dp"
@@ -46,7 +46,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:background="@color/amarillo_apagado"
+        android:backgroundTint="@color/amarillo_apagado"
         android:text="@string/amarillo"
         android:textColor="#263238"
         app:layout_constraintEnd_toStartOf="@+id/botonAzul"
@@ -57,7 +57,7 @@
         android:id="@+id/botonAzul"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:background="@color/azul_apagado"
+        android:backgroundTint="@color/azul_apagado"
         android:text="@string/azul"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="40dp" android:layout_marginTop="20dp"
