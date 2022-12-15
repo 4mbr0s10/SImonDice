@@ -4,17 +4,77 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/donsimon"
+    android:rotationX="-1"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/botonInicio"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="288dp"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="524dp"
         android:background="#FF0000"
         android:text="@string/start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="130dp" />
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/diseManise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SIMON DISE MANISE"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/botonRojo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@color/rojo_apagado"
+        android:text="@string/rojo"
+        app:layout_constraintEnd_toStartOf="@+id/botonVerde"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/diseManise" />
+
+    <Button
+        android:id="@+id/botonVerde"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="40dp"
+        android:backgroundTint="@color/verde_apagado"
+        android:text="@string/verde"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/diseManise" />
+
+    <Button
+        android:id="@+id/botonAmarillo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@color/amarillo_apagado"
+        android:text="@string/amarillo"
+        android:textColor="#263238"
+        app:layout_constraintEnd_toStartOf="@+id/botonAzul"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/botonRojo" />
+
+    <Button
+        android:id="@+id/botonAzul"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="40dp"
+        android:backgroundTint="@color/azul_apagado"
+        android:text="@string/azul"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/botonVerde" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
